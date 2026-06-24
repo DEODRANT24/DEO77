@@ -347,9 +347,8 @@ export default function Landing() {
             <div className="nav-dropdown">
               <button className="nav-dropdown-trigger">GAMES ▾</button>
               <div className="nav-dropdown-menu">
-                <a href="https://jeetwor.xyz" target="_blank" rel="noopener noreferrer">WOW REMIGRATION</a>
-                <a href="https://deodrant.fun" target="_blank" rel="noopener noreferrer">DEODRANT FUN</a>
-                <a href="https://grandjeetauto.com" target="_blank" rel="noopener noreferrer">GRAND JEET AUTO</a>
+                <a href="https://jeetwor.xyz" target="_blank" rel="noopener noreferrer">JEET WOR</a>
+                <a href="https://grandjeetauto.com" target="_blank" rel="noopener noreferrer">GJA VI (coming soon 💩)</a>
               </div>
             </div>
             <a href="#services">SERVICES</a>
@@ -392,9 +391,8 @@ export default function Landing() {
             {mobileMenuOpen && (
               <div className="spray-menu">
                 <div className="spray-menu-nozzle" />
-                <a href="https://jeetwor.xyz" target="_blank" rel="noopener noreferrer" className="spray-menu-item" style={{ "--delay": "0.02s" } as React.CSSProperties} onClick={closeMobileMenu}>🎮 WOW REMIGRATION</a>
-                <a href="https://deodrant.fun" target="_blank" rel="noopener noreferrer" className="spray-menu-item" style={{ "--delay": "0.07s" } as React.CSSProperties} onClick={closeMobileMenu}>🎮 DEODRANT FUN</a>
-                <a href="https://grandjeetauto.com" target="_blank" rel="noopener noreferrer" className="spray-menu-item" style={{ "--delay": "0.10s" } as React.CSSProperties} onClick={closeMobileMenu}>🎮 GRAND JEET AUTO</a>
+                <a href="https://jeetwor.xyz" target="_blank" rel="noopener noreferrer" className="spray-menu-item" style={{ "--delay": "0.02s" } as React.CSSProperties} onClick={closeMobileMenu}>🎮 JEET WOR</a>
+                <a href="https://grandjeetauto.com" target="_blank" rel="noopener noreferrer" className="spray-menu-item" style={{ "--delay": "0.07s" } as React.CSSProperties} onClick={closeMobileMenu}>🎮 GJA VI (coming soon 💩)</a>
                 <a href="#services" className="spray-menu-item" style={{ "--delay": "0.12s" } as React.CSSProperties} onClick={closeMobileMenu}>SERVICES</a>
                 <a href="#token" className="spray-menu-item" style={{ "--delay": "0.17s" } as React.CSSProperties} onClick={closeMobileMenu}>TOKEN</a>
                 <a href="https://x.com/DEODRANTSPRAY" target="_blank" rel="noopener noreferrer" className="spray-menu-item spray-menu-item--social" style={{ "--delay": "0.22s" } as React.CSSProperties} onClick={closeMobileMenu}>
