@@ -305,7 +305,7 @@
 .cc-cost-section .cc-cost-table td:first-child { color: rgba(255, 255, 255, 0.65); }
 .cc-cost-section .cc-cost-table .cc-highlight { color: #FFE033; font-weight: 600; }
 .cc-cost-section .cc-cost-table .cc-dim { color: rgba(255, 255, 255, 0.52); }
-.cc-cost-section .cc-cost-note { color: rgba(240, 237, 230, 0.28); }
+.cc-cost-section .cc-cost-note { color: rgba(240, 237, 230, 0.88); }
 .cc-cost-table {
   width: 100%;
   border-collapse: collapse;
@@ -736,7 +736,7 @@
 }
 .cc-how-section .cc-step-num { color: rgba(255, 140, 66, 1); }
 .cc-how-section .cc-step-title { color: #7DD8FF; }
-.cc-how-section .cc-step-desc { color: rgba(180, 232, 255, 0.52); }
+.cc-how-section .cc-step-desc { color: rgba(180, 232, 255, 1); }
 
 /* ── Infrastructure section (dark · sky blue title & names · orange links) */
 .cc-infra-section {
