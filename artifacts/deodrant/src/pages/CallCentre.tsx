@@ -323,7 +323,7 @@ function IntroView({
       {/* Cost comparison */}
       <div className="cc-cost-section">
         <div className="cc-section-title">HUMAN vs AI — THE NUMBERS</div>
-        <p style={{ fontSize: '0.85rem', color: 'rgba(240,237,230,0.52)', marginBottom: '1rem', lineHeight: '1.6' }}>
+        <p style={{ fontSize: '1.7rem', color: '#FFFFFF', marginBottom: '1rem', lineHeight: '1.6' }}>
           You use your own Twilio and OpenAI accounts — you pay them directly at their published rates. We don't mark up API costs. Your total cost is their API fees + our $4.20/month bundling fee.
         </p>
         <div style={{ overflowX: 'auto' }}>
