@@ -714,9 +714,9 @@
   background: rgba(255, 255, 255, 0.04);
   border-color: rgba(255, 224, 51, 0.14);
 }
-.cc-breakdown-section .cc-breakdown-label { color: rgba(240, 237, 230, 0.4); }
+.cc-breakdown-section .cc-breakdown-label { color: rgba(240, 237, 230, 0.88); }
 .cc-breakdown-section .cc-breakdown-value { color: #FF8C42; }
-.cc-breakdown-section .cc-breakdown-sub { color: rgba(240, 237, 230, 0.3); }
+.cc-breakdown-section .cc-breakdown-sub { color: rgba(240, 237, 230, 0.82); }
 .cc-breakdown-section .cc-card--yellow {
   background: rgba(255, 255, 255, 0.05);
   border-color: rgba(255, 224, 51, 0.22);

@@ -418,13 +418,13 @@ function IntroView({
             { calls: 1000, api: 270, fee: 4.20, human: 4200 },
           ].map(({ calls, api, fee, human }) => (
             <div key={calls} className="cc-card cc-card--yellow" style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: '0.72rem', color: 'rgba(240,237,230,0.38)', marginBottom: '0.4rem', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+              <div style={{ fontSize: '0.72rem', color: 'rgba(240,237,230,0.88)', marginBottom: '0.4rem', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
                 {calls} calls / month
               </div>
               <div style={{ fontFamily: 'var(--font-comic)', fontSize: '1.5rem', color: '#FFE033' }}>
                 ~${(api + fee).toFixed(0)}/mo
               </div>
-              <div style={{ fontSize: '0.72rem', color: 'rgba(240,237,230,0.38)', marginTop: '0.2rem' }}>
+              <div style={{ fontSize: '0.72rem', color: 'rgba(240,237,230,0.88)', marginTop: '0.2rem' }}>
                 vs ~${human.toLocaleString()}/mo human
               </div>
               <div style={{ fontSize: '0.7rem', color: '#7DD8FF', marginTop: '0.4rem' }}>
