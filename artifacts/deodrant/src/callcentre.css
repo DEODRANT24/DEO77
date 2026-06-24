@@ -751,10 +751,10 @@
   border-color: rgba(125, 216, 255, 0.11);
 }
 .cc-infra-section .cc-infra-name { color: #7DD8FF; }
-.cc-infra-section .cc-infra-cost { color: rgba(240, 237, 230, 0.4); }
+.cc-infra-section .cc-infra-cost { color: rgba(240, 237, 230, 0.88); font-size: 0.90rem; }
 .cc-infra-section .cc-infra-link { color: #FF8C42; opacity: 1; }
 .cc-infra-section .cc-infra-link:hover { color: #FFA05A; text-decoration: underline; }
-.cc-infra-section .cc-referral-note { color: rgba(240, 237, 230, 0.22); }
+.cc-infra-section .cc-referral-note { color: rgba(240, 237, 230, 0.80); font-size: 0.90rem; }
 
 /* ── GET APIS genie lightbox ────────────────────────────── */
 @keyframes cc-genie-in {

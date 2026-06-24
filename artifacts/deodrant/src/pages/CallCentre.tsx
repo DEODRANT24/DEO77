@@ -457,14 +457,14 @@ function IntroView({
       {/* Infrastructure */}
       <div className="cc-infra-section" style={{ marginBottom: '2rem' }}>
         <div className="cc-section-title">THE INFRASTRUCTURE</div>
-        <p style={{ fontSize: '0.85rem', color: 'rgba(240,237,230,0.52)', marginBottom: '1rem', lineHeight: '1.6' }}>
+        <p style={{ fontSize: '1.02rem', color: 'rgba(240,237,230,0.92)', marginBottom: '1rem', lineHeight: '1.6' }}>
           Sign up to each provider below, get your API keys, and enter them in your dashboard. All links go directly to their signup pages.
         </p>
         <div className="cc-infra-grid">
           <div className="cc-infra-card">
             <div className="cc-infra-name">📞 Twilio</div>
             <div className="cc-infra-cost">Phone numbers: ~$1.50/mo · Calls: ~$0.01/min</div>
-            <div style={{ fontSize: '0.75rem', color: 'rgba(240,237,230,0.42)', marginBottom: '0.5rem', lineHeight: '1.5' }}>
+            <div style={{ fontSize: '0.90rem', color: 'rgba(240,237,230,0.88)', marginBottom: '0.5rem', lineHeight: '1.5' }}>
               Handles inbound/outbound calling in 60+ countries. Provision a local number for your business.
             </div>
             <a href="https://www.twilio.com/try-twilio" target="_blank" rel="noopener noreferrer" className="cc-infra-link">
@@ -474,7 +474,7 @@ function IntroView({
           <div className="cc-infra-card">
             <div className="cc-infra-name">🧠 OpenAI</div>
             <div className="cc-infra-cost">Realtime API: ~$0.25 per 2-min call</div>
-            <div style={{ fontSize: '0.75rem', color: 'rgba(240,237,230,0.42)', marginBottom: '0.5rem', lineHeight: '1.5' }}>
+            <div style={{ fontSize: '0.90rem', color: 'rgba(240,237,230,0.88)', marginBottom: '0.5rem', lineHeight: '1.5' }}>
               Powers the AI voice — GPT-4o Realtime processes audio in real time, no transcription lag. Their GPUs, your key.
             </div>
             <a href="https://platform.openai.com/signup" target="_blank" rel="noopener noreferrer" className="cc-infra-link">
