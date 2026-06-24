@@ -311,7 +311,7 @@ export default function XCleanSaar() {
 
       {/* ── Hero Comic Strip ───────────────────────────────────── */}
       <section className="xc-hero-img">
-        <img src="/xclean-comic.png" alt="X Clean Saar comic strip" className="xc-hero-img__img" />
+        <img src="/xclean-comic2.png" alt="X Clean Saar comic strip" className="xc-hero-img__img" />
       </section>
 
       {/* Title Band */}
