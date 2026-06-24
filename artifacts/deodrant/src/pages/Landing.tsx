@@ -444,7 +444,7 @@ export default function Landing() {
                     ))}
                   </div>
                 </div>
-                <div className="shiva-caption">LORD SHIVA<br />CHIEF DEODORANT TEST RAT</div>
+                <div className="shiva-caption">LORD SHIVA<br />CHIEF DEODRANT TEST RAT</div>
               </div>
             </div>
 
@@ -525,7 +525,7 @@ export default function Landing() {
                   ))}
                 </div>
               </div>
-              <div className="shiva-caption">LORD SHIVA<br />CHIEF DEODORANT TEST RAT</div>
+              <div className="shiva-caption">LORD SHIVA<br />CHIEF DEODRANT TEST RAT</div>
               <div className="speech-bubble">
                 "YOUR PORTFOLIO<br />NEEDS THIS MORE<br />THAN YOU KNOW."
               </div>
