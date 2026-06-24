@@ -3,6 +3,7 @@ import { publishableKeyFromHost } from "@clerk/react/internal";
 import { shadcn } from "@clerk/themes";
 import { Switch, Route, useLocation, Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { useEffect } from "react";
 import Landing from "./pages/Landing";
 import ProfilePage from "./pages/ProfilePage";
 import CallCentre from "./pages/CallCentre";
@@ -115,6 +116,14 @@ function SignUpPage() {
   );
 }
 
+function ScrollToTop() {
+  const [location] = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+  return null;
+}
+
 function ClerkProviderWithRoutes() {
   const [, setLocation] = useLocation();
 
@@ -143,6 +152,7 @@ function ClerkProviderWithRoutes() {
       routerReplace={(to) => setLocation(stripBase(to), { replace: true })}
     >
       <QueryClientProvider client={queryClient}>
+        <ScrollToTop />
         <Switch>
           <Route path="/" component={Landing} />
           <Route path="/sign-in/*?" component={SignInPage} />
