@@ -9,6 +9,7 @@ import ProfilePage from "./pages/ProfilePage";
 import CallCentre from "./pages/CallCentre";
 import GetLeadsSaar from "./pages/GetLeadsSaar";
 import XCleanSaar from "./pages/XCleanSaar";
+import AdminPage from "./pages/AdminPage";
 import NotFound from "./pages/not-found";
 import "./index.css";
 
@@ -161,6 +162,7 @@ function ClerkProviderWithRoutes() {
           <Route path="/callcentre" component={CallCentre} />
           <Route path="/leads" component={GetLeadsSaar} />
           <Route path="/x-clean" component={XCleanSaar} />
+          <Route path="/admin" component={AdminPage} />
           <Route component={NotFound} />
         </Switch>
       </QueryClientProvider>
