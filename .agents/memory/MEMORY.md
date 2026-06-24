@@ -1,0 +1,1 @@
+- [DEODRANT project setup](deodrant-project.md) — Solana burn-to-verify auth, Clerk auth, 4 DB tables; workflows need PORT env var passed inline.

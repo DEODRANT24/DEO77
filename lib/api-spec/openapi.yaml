@@ -10,13 +10,16 @@ servers:
 tags:
   - name: health
     description: Health operations
+  - name: profiles
+    description: User profile operations
+  - name: wallets
+    description: Wallet registration and verification
 paths:
   /healthz:
     get:
       operationId: healthCheck
       tags: [health]
       summary: Health check
-      description: Returns server health status
       responses:
         "200":
           description: Healthy
@@ -24,6 +27,123 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+
+  /profiles/me:
+    get:
+      operationId: getMyProfile
+      tags: [profiles]
+      summary: Get current user profile
+      responses:
+        "200":
+          description: Profile found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Profile"
+        "401":
+          description: Unauthorized
+
+  /profiles/me/wallets:
+    get:
+      operationId: getMyWallets
+      tags: [profiles]
+      summary: Get wallets linked to the current profile
+      responses:
+        "200":
+          description: List of wallets
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/WalletEntry"
+        "401":
+          description: Unauthorized
+
+  /wallets/register:
+    post:
+      operationId: registerWallet
+      tags: [wallets]
+      summary: Register a wallet address and receive a burn challenge
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WalletRegisterInput"
+      responses:
+        "200":
+          description: Burn challenge issued
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BurnChallenge"
+        "400":
+          description: Invalid wallet address
+
+  /wallets/verify:
+    post:
+      operationId: verifyWalletBurn
+      tags: [wallets]
+      summary: Submit a burn transaction to verify wallet ownership
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WalletVerifyInput"
+      responses:
+        "200":
+          description: Wallet verified and session token issued
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WalletVerifyResult"
+        "400":
+          description: Verification failed
+
+  /wallets/session:
+    post:
+      operationId: walletLogin
+      tags: [wallets]
+      summary: Log in using a wallet session token
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WalletLoginInput"
+      responses:
+        "200":
+          description: Profile and wallet info
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WalletLoginResult"
+        "401":
+          description: Invalid or expired token
+
+  /wallets/challenge:
+    get:
+      operationId: getActiveChallenge
+      tags: [wallets]
+      summary: Get the active burn challenge for a wallet address
+      parameters:
+        - name: address
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Active challenge
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BurnChallenge"
+        "404":
+          description: No active challenge
+
 components:
   schemas:
     HealthStatus:
@@ -34,3 +154,110 @@ components:
       required:
         - status
 
+    Profile:
+      type: object
+      required: [id, createdAt]
+      properties:
+        id:
+          type: integer
+        clerkUserId:
+          type: ["string", "null"]
+        displayName:
+          type: ["string", "null"]
+        avatarUrl:
+          type: ["string", "null"]
+        email:
+          type: ["string", "null"]
+        createdAt:
+          type: string
+
+    WalletEntry:
+      type: object
+      required: [id, walletAddress, verified, totalBurned, createdAt]
+      properties:
+        id:
+          type: integer
+        walletAddress:
+          type: string
+        verified:
+          type: boolean
+        totalBurned:
+          type: integer
+        verifiedAt:
+          type: ["string", "null"]
+        createdAt:
+          type: string
+
+    BurnChallenge:
+      type: object
+      required: [id, walletAddress, challengeAmount, status, createdAt, expiresAt]
+      properties:
+        id:
+          type: integer
+        walletAddress:
+          type: string
+        challengeAmount:
+          type: integer
+        status:
+          type: string
+        createdAt:
+          type: string
+        expiresAt:
+          type: string
+
+    WalletRegisterInput:
+      type: object
+      required: [walletAddress]
+      properties:
+        walletAddress:
+          type: string
+        profileToken:
+          type: ["string", "null"]
+
+    WalletVerifyInput:
+      type: object
+      required: [walletAddress, txSignature]
+      properties:
+        walletAddress:
+          type: string
+        txSignature:
+          type: string
+        profileToken:
+          type: ["string", "null"]
+
+    WalletVerifyResult:
+      type: object
+      required: [walletAddress, verified, totalBurned, sessionToken]
+      properties:
+        walletAddress:
+          type: string
+        verified:
+          type: boolean
+        totalBurned:
+          type: integer
+        sessionToken:
+          type: string
+        profileId:
+          type: ["integer", "null"]
+
+    WalletLoginInput:
+      type: object
+      required: [sessionToken]
+      properties:
+        sessionToken:
+          type: string
+
+    WalletLoginResult:
+      type: object
+      required: [walletAddress, totalBurned, profileId]
+      properties:
+        walletAddress:
+          type: string
+        totalBurned:
+          type: integer
+        profileId:
+          type: ["integer", "null"]
+        displayName:
+          type: ["string", "null"]
+        avatarUrl:
+          type: ["string", "null"]

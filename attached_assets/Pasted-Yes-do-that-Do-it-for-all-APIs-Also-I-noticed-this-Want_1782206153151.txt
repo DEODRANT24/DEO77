@@ -1,0 +1,16 @@
+Yes do that. Do it for all APIs.
+Also, I noticed this:
+☁️ Want it running 24/7 without keeping your computer on? Deploy to Railway, Render, or Fly.io instead of running locally — they give you a permanent public URL so you don't need ngrok either.
+include a option below that reads: How to set up like this?
+Clicking it, crosses out steps above where necesary, and adds new steps where necessary, to the list above it. A React setting i think
+      Two tasks:
+1. Add ElevenLabs API credential test (and make it "do it for all APIs" so all three are tested)
+2. Add "How to set up like this?" toggle below the cloud callout that modifies the install guide steps — crossing out local/ngrok steps and adding cloud deployment steps
+Let me think about the cloud deployment mode carefully. When clicked, it should:
+* Cross out steps that are local-specific (Step 6 - ngrok, Step 7 - Twilio webhook config with ngrok URL)
+* Add new steps for cloud deployment (push to Railway/Render, get permanent URL, set env vars in cloud dashboard)
+* Step 3 (.env check) becomes less relevant for cloud since env vars are set in the dashboard instead
+I'll use a cloudMode boolean state to toggle this behavior. When enabled, certain steps get strikethrough styling while cloud-specific content replaces them. Step 6 (ngrok) gets crossed out and replaced with cloud deployment instructions, Step 7 adjusts to use the cloud URL instead of ngrok, and Step 3 gets partially struck through with instructions for setting env vars in the cloud dashboard.
+Looking at the actual install guide steps, the flow shifts to: install Python, download the bot, set env vars in the cloud dashboard (replacing the .env check), upload the CSV, install dependencies on the cloud platform, deploy via git push or CLI instead of ngrok, point Twilio to the cloud URL, and let it auto-start rather than manually starting it.
+For the ElevenLabs validation, I'm checking the API key by pinging the user endpoint, and if a voice ID is set, also verifying that specific voice exists.
+Adding the cloud mode toggle...

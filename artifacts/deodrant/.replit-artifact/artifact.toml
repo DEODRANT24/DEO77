@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "DEODRANT — AI Call Centre"
+version = "1.0.0"
+id = "artifacts/deodrant"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23789
+
+[services.development]
+run = "pnpm --filter @workspace/deodrant run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/deodrant", "run", "build" ]
+publicDir = "artifacts/deodrant/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23789"
+BASE_PATH = "/"
