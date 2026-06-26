@@ -2,7 +2,6 @@ import '../callcentre.css';
 import { useState, useEffect } from 'react';
 import { useLocation } from 'wouter';
 import {
-  DEODRANT_CONTRACT_PLACEHOLDER,
   DEODRANT_REQUIRED,
   PRICE_HOLDER,
   PRICE_STANDARD,
@@ -65,15 +64,25 @@ Your communication style is ${d.personality || 'professional'}. Always be helpfu
 function DeodrantLightbox({ onClose }: { onClose: () => void }) {
   const [copied, setCopied] = useState(false);
   const [copiedStep, setCopiedStep] = useState(false);
+  const [contractAddress, setContractAddress] = useState('');
+
+  useEffect(() => {
+    fetch('/api/token-address')
+      .then(r => r.ok ? r.json() : null)
+      .then(d => { if (d?.address) setContractAddress(d.address); })
+      .catch(() => {});
+  }, []);
 
   function copyAddr() {
-    navigator.clipboard.writeText(DEODRANT_CONTRACT_PLACEHOLDER).catch(() => {});
+    if (!contractAddress) return;
+    navigator.clipboard.writeText(contractAddress).catch(() => {});
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   }
 
   function copyAddrStep() {
-    navigator.clipboard.writeText(DEODRANT_CONTRACT_PLACEHOLDER).catch(() => {});
+    if (!contractAddress) return;
+    navigator.clipboard.writeText(contractAddress).catch(() => {});
     setCopiedStep(true);
     setTimeout(() => setCopiedStep(false), 2000);
   }
@@ -88,12 +97,20 @@ function DeodrantLightbox({ onClose }: { onClose: () => void }) {
         </div>
 
         <div className="cc-contract-box">
-          <div className="cc-contract-label">Contract address — coming soon (placeholder)</div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', flexWrap: 'wrap' }}>
-            <div className="cc-contract-addr">{DEODRANT_CONTRACT_PLACEHOLDER}</div>
-            <button className="cc-copy-btn" onClick={copyAddr}>{copied ? '✓ Copied' : 'Copy'}</button>
+          <div className="cc-contract-label">
+            {contractAddress ? 'Contract address' : 'Contract address — coming soon'}
           </div>
-          <div className="cc-contract-note">⚠ Official contract address coming soon — do not send funds to this address yet.</div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', flexWrap: 'wrap' }}>
+            <div className="cc-contract-addr">
+              {contractAddress || 'TBA — TOKEN LAUNCHING SOON'}
+            </div>
+            {contractAddress && (
+              <button className="cc-copy-btn" onClick={copyAddr}>{copied ? '✓ Copied' : 'Copy'}</button>
+            )}
+          </div>
+          {!contractAddress && (
+            <div className="cc-contract-note">⚠ Official contract address coming soon — do not send funds yet.</div>
+          )}
         </div>
 
         <div className="cc-buy-step">

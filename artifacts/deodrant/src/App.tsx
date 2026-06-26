@@ -51,7 +51,7 @@ const clerkAppearance = {
   },
   elements: {
     rootBox: "w-full flex justify-center",
-    cardBox: "bg-[#1a0033] border-4 border-[#f5c518] w-[480px] max-w-full overflow-hidden",
+    cardBox: "bg-[#1a0033] border-4 border-[#f5c518] w-[480px] max-w-full",
     card: "!shadow-none !border-0 !bg-transparent",
     footer: "!shadow-none !border-0 !bg-transparent",
     headerTitle: "text-[#f5c518] font-bold uppercase tracking-wider !text-[2.2rem]",
@@ -80,10 +80,9 @@ const clerkAppearance = {
 function AuthPageShell({ children, label }: { children: React.ReactNode; label: string }) {
   return (
     <div
-      style={{ background: "radial-gradient(ellipse at center, #2a0044 0%, #0d001a 100%)", minHeight: "100dvh", overflowY: "auto" }}
+      style={{ background: "radial-gradient(ellipse at center, #2a0044 0%, #0d001a 100%)", minHeight: "100dvh", overflowY: "auto", display: "flex", flexDirection: "column", alignItems: "center", padding: "3rem 1rem 2rem" }}
     >
-      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", minHeight: "100dvh", padding: "2.5rem 1rem" }}>
-        <div style={{ width: "100%", maxWidth: "480px" }}>
+      <div style={{ width: "100%", maxWidth: "480px", margin: "auto" }}>
           <p style={{
             textAlign: "center",
             color: "#f5c518",
@@ -100,7 +99,6 @@ function AuthPageShell({ children, label }: { children: React.ReactNode; label: 
           </p>
           {children}
         </div>
-      </div>
     </div>
   );
 }
