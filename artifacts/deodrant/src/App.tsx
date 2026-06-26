@@ -66,8 +66,8 @@ const clerkAppearance = {
     alertText: "text-[#f5c518]",
     logoBox: "flex justify-center py-6 clerk-logo-box",
     logoImage: "clerk-logo-big",
-    socialButtonsBlockButton: "!bg-[#f5c518] border-b-4 border-[#a07a00] !text-white font-bold uppercase hover:!bg-[#e0b010] !py-4 !text-[1.1rem]",
-    formButtonPrimary: "!bg-[#f5c518] !text-[#1a0033] font-bold uppercase border-b-4 border-[#a07a00] hover:!bg-[#e0b010] !text-[1.15rem] !py-4",
+    socialButtonsBlockButton: "!bg-[#f5c518] border-b-4 border-[#a07a00] !text-white font-bold uppercase hover:!bg-[#e0b010]",
+    formButtonPrimary: "!bg-[#f5c518] !text-[#1a0033] font-bold uppercase border-b-4 border-[#a07a00] hover:!bg-[#e0b010] !text-[1.1rem]",
     formFieldInput: "bg-[#2a0044] border-2 border-[#f5c518] text-[#f5c518]",
     footerAction: "bg-transparent",
     dividerLine: "bg-[#4a1a6a]",
@@ -77,43 +77,55 @@ const clerkAppearance = {
   },
 };
 
-function SignInPage() {
+function AuthPageShell({ children, label }: { children: React.ReactNode; label: string }) {
   return (
     <div
-      className="flex min-h-[100dvh] items-center justify-center px-3 py-8"
-      style={{ background: "radial-gradient(ellipse at center, #2a0044 0%, #0d001a 100%)" }}
+      style={{ background: "radial-gradient(ellipse at center, #2a0044 0%, #0d001a 100%)", minHeight: "100dvh", overflowY: "auto" }}
     >
-      <div className="w-full max-w-lg">
-        <p className="text-center text-[#f5c518] font-bold text-lg sm:text-2xl tracking-[0.08em] sm:tracking-[0.25em] uppercase mb-6 opacity-70 leading-tight">
-          ⚠ JEETS WILL BE REJECTED ⚠
-        </p>
-        <SignIn
-          routing="path"
-          path={`${basePath}/sign-in`}
-          signUpUrl={`${basePath}/sign-up`}
-        />
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", minHeight: "100dvh", padding: "2.5rem 1rem" }}>
+        <div style={{ width: "100%", maxWidth: "480px" }}>
+          <p style={{
+            textAlign: "center",
+            color: "#f5c518",
+            fontWeight: "bold",
+            textTransform: "uppercase",
+            marginBottom: "1.5rem",
+            opacity: 0.7,
+            whiteSpace: "nowrap",
+            overflow: "hidden",
+            fontSize: "clamp(0.6rem, 3.8vw, 1.1rem)",
+            letterSpacing: "clamp(0.04em, 0.7vw, 0.18em)",
+          }}>
+            {label}
+          </p>
+          {children}
+        </div>
       </div>
     </div>
   );
 }
 
+function SignInPage() {
+  return (
+    <AuthPageShell label="⚠ JEETS WILL BE REJECTED ⚠">
+      <SignIn
+        routing="path"
+        path={`${basePath}/sign-in`}
+        signUpUrl={`${basePath}/sign-up`}
+      />
+    </AuthPageShell>
+  );
+}
+
 function SignUpPage() {
   return (
-    <div
-      className="flex min-h-[100dvh] items-center justify-center px-3 py-8"
-      style={{ background: "radial-gradient(ellipse at center, #2a0044 0%, #0d001a 100%)" }}
-    >
-      <div className="w-full max-w-lg">
-        <p className="text-center text-[#f5c518] font-bold text-lg sm:text-2xl tracking-[0.08em] sm:tracking-[0.25em] uppercase mb-6 opacity-70 leading-tight">
-          ⚠ SMELL TEST IN PROGRESS ⚠
-        </p>
-        <SignUp
-          routing="path"
-          path={`${basePath}/sign-up`}
-          signInUrl={`${basePath}/sign-in`}
-        />
-      </div>
-    </div>
+    <AuthPageShell label="⚠ SMELL TEST IN PROGRESS ⚠">
+      <SignUp
+        routing="path"
+        path={`${basePath}/sign-up`}
+        signInUrl={`${basePath}/sign-in`}
+      />
+    </AuthPageShell>
   );
 }
 
