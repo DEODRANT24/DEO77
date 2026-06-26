@@ -859,3 +859,127 @@
   background: rgba(107, 75, 194, 0.02);
   line-height: 1.5;
 }
+
+/* ── Mobile Responsiveness ─────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .cc-topbar {
+    padding: 0.6rem 1rem;
+  }
+  .cc-back-link {
+    font-size: 1rem;
+  }
+  .cc-topbar-logo {
+    font-size: 1rem;
+  }
+  .cc-topbar-user {
+    font-size: 0.85rem;
+    gap: 0.5rem;
+  }
+  .cc-logout-btn {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.7rem;
+  }
+
+  .cc-intro {
+    padding: 1.25rem 0.9rem 3rem;
+  }
+
+  .cc-hero {
+    padding: 2rem 0 1.5rem;
+  }
+  .cc-hero-title {
+    font-size: 2rem !important;
+    line-height: 1.1;
+  }
+  .cc-hero-sub {
+    font-size: 1rem !important;
+    line-height: 1.5;
+  }
+
+  .cc-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+  .cc-btn {
+    font-size: 1.05rem;
+    padding: 0.85rem 1.25rem;
+    width: 100%;
+    justify-content: center;
+  }
+  .cc-btn--sm {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .cc-pricing-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+  }
+  .cc-pricing-card {
+    padding: 1.5rem 1.25rem;
+  }
+  .cc-plan-price {
+    font-size: 2rem;
+  }
+
+  .cc-section-title {
+    font-size: 1.1rem;
+  }
+
+  .cc-how-grid,
+  .cc-steps-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .cc-step {
+    padding: 1rem;
+  }
+
+  .cc-infra-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .cc-monthly-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .cc-breakdown-section,
+  .cc-how-section,
+  .cc-infra-section {
+    padding: 1.1rem 0.9rem;
+  }
+
+  .cc-breakdown-item {
+    padding: 0.75rem 0.9rem;
+  }
+  .cc-breakdown-label {
+    font-size: 0.95rem;
+  }
+  .cc-breakdown-value {
+    font-size: 1rem;
+  }
+
+  .cc-api-genie {
+    width: calc(100vw - 1.5rem);
+  }
+  .cc-api-genie-split {
+    flex-direction: column;
+  }
+  .cc-api-genie-divider {
+    width: auto;
+    height: 1px;
+    margin: 0 0.75rem;
+  }
+  .cc-api-genie-col {
+    padding: 1rem;
+  }
+
+  .cc-lightbox {
+    padding: 1.25rem 1rem;
+    max-height: 92vh;
+  }
+  .cc-lightbox-title {
+    font-size: 1.15rem;
+  }
+}

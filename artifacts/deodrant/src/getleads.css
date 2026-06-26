@@ -1468,3 +1468,160 @@ code {
 .gl-install-cloud-toggle--active:hover {
   background: rgba(255, 230, 0, 0.1);
 }
+
+/* ── Extended Mobile Responsiveness ────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .gl-nav {
+    padding: 0.6rem 0.9rem;
+  }
+  .gl-nav-title {
+    font-size: 1.2rem;
+  }
+  .gl-nav-badge {
+    font-size: 0.72rem;
+    padding: 0.25rem 0.5rem;
+  }
+  .gl-nav-can {
+    height: 36px;
+  }
+
+  .gl-title-band {
+    padding: 1.25rem 1rem 0.75rem;
+  }
+  .gl-main-title {
+    font-size: 2.4rem !important;
+    line-height: 1;
+  }
+  .gl-main-sub {
+    font-size: 0.72rem !important;
+    letter-spacing: 0.08em !important;
+  }
+  .gl-word-burst {
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .gl-word-burst span {
+    font-size: 0.9rem !important;
+    padding: 0.25rem 0.6rem !important;
+  }
+
+  .gl-content {
+    padding: 1.25rem 0.9rem 3rem;
+  }
+
+  .gl-section {
+    margin-bottom: 1rem;
+  }
+  .gl-section-header {
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .gl-step-num {
+    font-size: 2rem !important;
+    min-width: 2rem;
+  }
+  .gl-section-title {
+    font-size: 1.2rem !important;
+  }
+  .gl-section-sub {
+    font-size: 0.85rem;
+  }
+
+  .gl-mode-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.5rem;
+  }
+  .gl-mode-btn {
+    font-size: 0.85rem !important;
+    padding: 0.6rem 0.75rem !important;
+  }
+
+  .gl-goals-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.5rem;
+  }
+
+  .gl-voice-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.5rem;
+  }
+
+  .gl-launch-section {
+    padding: 1.25rem 0.9rem;
+  }
+  .gl-launch-btn {
+    font-size: 1.3rem !important;
+    padding: 1rem 1.5rem !important;
+    width: 100%;
+    text-align: center;
+  }
+
+  .gl-stat-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .gl-modal {
+    padding: 1.5rem 1rem 1.25rem;
+    border-width: 2px;
+    box-shadow: 4px 4px 0 #FFE600;
+  }
+  .gl-modal-title {
+    font-size: 1.5rem;
+  }
+  .gl-modal-section {
+    padding: 1rem 0.9rem 0.9rem;
+  }
+
+  .gl-install-steps {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .gl-install-step {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 0.75rem;
+  }
+
+  .gl-feature-card {
+    padding: 1rem;
+  }
+  .gl-feature-title {
+    font-size: 1rem;
+  }
+  .gl-feature-desc {
+    font-size: 0.83rem;
+  }
+
+  .gl-pricing-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .gl-price-card {
+    padding: 1.25rem 1rem;
+  }
+
+  .gl-script-preview {
+    font-size: 0.82rem;
+    padding: 0.75rem;
+  }
+
+  .gl-customer-voice-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .gl-nav-title {
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+  }
+  .gl-nav-badge {
+    display: none;
+  }
+  .gl-main-title {
+    font-size: 2rem !important;
+  }
+  .gl-hero {
+    grid-template-columns: 1fr 28px 1fr;
+  }
+}

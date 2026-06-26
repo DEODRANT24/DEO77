@@ -3235,6 +3235,18 @@ a[href*="replit.com"][target="_blank"]:not([class]) {
   color: #f5c518;
 }
 
+/* ── Clerk logo size override ────────────────────────────────────────────── */
+.clerk-logo-big {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+  display: block !important;
+}
+.clerk-logo-box {
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+}
+
 @layer clerk {
   /* Replit proxy Clerk component overrides */
 }

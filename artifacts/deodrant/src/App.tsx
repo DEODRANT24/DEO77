@@ -51,7 +51,7 @@ const clerkAppearance = {
   },
   elements: {
     rootBox: "w-full flex justify-center",
-    cardBox: "bg-[#1a0033] border-4 border-[#f5c518] w-[440px] max-w-full overflow-hidden",
+    cardBox: "bg-[#1a0033] border-4 border-[#f5c518] w-[480px] max-w-full overflow-hidden",
     card: "!shadow-none !border-0 !bg-transparent",
     footer: "!shadow-none !border-0 !bg-transparent",
     headerTitle: "text-[#f5c518] font-bold uppercase tracking-wider !text-[2.2rem]",
@@ -64,10 +64,10 @@ const clerkAppearance = {
     identityPreviewEditButton: "text-[#f5c518]",
     formFieldSuccessText: "text-green-400",
     alertText: "text-[#f5c518]",
-    logoBox: "flex justify-center py-2",
-    logoImage: "h-14 w-auto",
-    socialButtonsBlockButton: "!bg-[#f5c518] border-b-4 border-[#a07a00] !text-white font-bold uppercase hover:!bg-[#e0b010]",
-    formButtonPrimary: "!bg-[#f5c518] !text-[#1a0033] font-bold uppercase border-b-4 border-[#a07a00] hover:!bg-[#e0b010] !text-[1.1rem]",
+    logoBox: "flex justify-center py-6 clerk-logo-box",
+    logoImage: "clerk-logo-big",
+    socialButtonsBlockButton: "!bg-[#f5c518] border-b-4 border-[#a07a00] !text-white font-bold uppercase hover:!bg-[#e0b010] !py-4 !text-[1.1rem]",
+    formButtonPrimary: "!bg-[#f5c518] !text-[#1a0033] font-bold uppercase border-b-4 border-[#a07a00] hover:!bg-[#e0b010] !text-[1.15rem] !py-4",
     formFieldInput: "bg-[#2a0044] border-2 border-[#f5c518] text-[#f5c518]",
     footerAction: "bg-transparent",
     dividerLine: "bg-[#4a1a6a]",
@@ -80,11 +80,11 @@ const clerkAppearance = {
 function SignInPage() {
   return (
     <div
-      className="flex min-h-[100dvh] items-center justify-center px-4"
+      className="flex min-h-[100dvh] items-center justify-center px-3 py-8"
       style={{ background: "radial-gradient(ellipse at center, #2a0044 0%, #0d001a 100%)" }}
     >
-      <div className="w-full max-w-md">
-        <p className="text-center text-[#f5c518] font-bold text-2xl tracking-[0.3em] uppercase mb-6 opacity-70">
+      <div className="w-full max-w-lg">
+        <p className="text-center text-[#f5c518] font-bold text-lg sm:text-2xl tracking-[0.08em] sm:tracking-[0.25em] uppercase mb-6 opacity-70 leading-tight">
           ⚠ JEETS WILL BE REJECTED ⚠
         </p>
         <SignIn
@@ -100,11 +100,11 @@ function SignInPage() {
 function SignUpPage() {
   return (
     <div
-      className="flex min-h-[100dvh] items-center justify-center px-4"
+      className="flex min-h-[100dvh] items-center justify-center px-3 py-8"
       style={{ background: "radial-gradient(ellipse at center, #2a0044 0%, #0d001a 100%)" }}
     >
-      <div className="w-full max-w-md">
-        <p className="text-center text-[#f5c518] font-bold text-2xl tracking-[0.3em] uppercase mb-6 opacity-70">
+      <div className="w-full max-w-lg">
+        <p className="text-center text-[#f5c518] font-bold text-lg sm:text-2xl tracking-[0.08em] sm:tracking-[0.25em] uppercase mb-6 opacity-70 leading-tight">
           ⚠ SMELL TEST IN PROGRESS ⚠
         </p>
         <SignUp

@@ -860,3 +860,161 @@
   .xc-price-vs { align-self: center; }
   .xc-connect-perms { grid-template-columns: 1fr; }
 }
+
+/* ── Extended Mobile Responsiveness ────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .xc-nav {
+    padding: 0.5rem 0.8rem;
+  }
+  .xc-nav-title {
+    font-size: 1.15rem;
+  }
+  .xc-nav-badge {
+    font-size: 0.72rem;
+    padding: 0.25rem 0.5rem;
+  }
+  .xc-nav-can {
+    height: 2rem;
+  }
+
+  .xc-hero-img {
+    max-height: 220px;
+    overflow: hidden;
+  }
+  .xc-hero-img__img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .xc-title-band {
+    padding: 1.25rem 1rem 1rem;
+  }
+  .xc-title {
+    font-size: 2.2rem !important;
+    line-height: 1;
+  }
+  .xc-subtitle {
+    font-size: 0.82rem !important;
+    line-height: 1.5;
+  }
+  .xc-words {
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .xc-words span {
+    font-size: 1rem !important;
+    padding: 0.3rem 0.7rem !important;
+  }
+
+  .xc-content {
+    padding: 1rem 0.9rem 3rem;
+  }
+  .xc-section {
+    padding: 1.25rem 1rem;
+    margin-bottom: 1rem;
+  }
+  .xc-section-title {
+    font-size: 1.2rem !important;
+  }
+  .xc-section-sub {
+    font-size: 0.85rem;
+  }
+
+  .xc-gate-grid {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .xc-gate-or {
+    align-self: center;
+  }
+  .xc-gate-card {
+    width: 100%;
+    padding: 1.25rem 1rem;
+  }
+  .xc-gate-amount {
+    font-size: 1.6rem !important;
+  }
+
+  .xc-verify-btn {
+    font-size: 1.05rem !important;
+    padding: 0.85rem 1.25rem !important;
+    width: 100%;
+  }
+
+  .xc-features-list {
+    grid-template-columns: 1fr !important;
+  }
+  .xc-feature-item {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .xc-tab-row {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 0.35rem;
+    padding-bottom: 0.25rem;
+  }
+  .xc-tab {
+    font-size: 0.85rem !important;
+    padding: 0.5rem 0.8rem !important;
+    white-space: nowrap;
+  }
+
+  .xc-clean-btn {
+    font-size: 1rem !important;
+    padding: 0.75rem 1rem !important;
+  }
+
+  .xc-connect-card {
+    padding: 1.25rem 1rem;
+  }
+  .xc-connect-x-logo {
+    font-size: 2rem !important;
+  }
+  .xc-connect-title {
+    font-size: 1.2rem !important;
+  }
+  .xc-connect-desc {
+    font-size: 0.85rem;
+  }
+  .xc-connect-btn {
+    font-size: 1rem !important;
+    padding: 0.8rem 1.25rem !important;
+    width: 100%;
+  }
+
+  .xc-price-tag {
+    font-size: 2.5rem !important;
+  }
+  .xc-price-label {
+    font-size: 0.85rem;
+  }
+  .xc-price-desc {
+    font-size: 0.83rem;
+  }
+
+  .xc-step-num {
+    font-size: 1.8rem !important;
+    min-width: 2rem;
+  }
+
+  .xc-gate-crosswalk {
+    font-size: 0.83rem;
+    padding: 0.75rem 0.9rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .xc-nav-title {
+    font-size: 1rem;
+  }
+  .xc-nav-badge {
+    display: none;
+  }
+  .xc-title {
+    font-size: 1.8rem !important;
+  }
+}

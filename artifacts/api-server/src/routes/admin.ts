@@ -5,6 +5,20 @@ import { eq } from "drizzle-orm";
 
 const router = Router();
 
+router.get("/token-address", async (req: Request, res: Response) => {
+  try {
+    const [setting] = await db
+      .select()
+      .from(siteSettingsTable)
+      .where(eq(siteSettingsTable.key, "token_address"));
+
+    res.json({ address: setting?.value ?? null, locked: !!setting });
+  } catch (err) {
+    req.log.error({ err }, "Failed to fetch token address");
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
 router.get("/admin/token-address", async (req: Request, res: Response) => {
   try {
     const [setting] = await db
